@@ -6,11 +6,12 @@ import "@nilfoundation/hardhat-plugin";
 
 // Import tasks
 import "./tasks/increment";
+import "./tasks/simplepurchase";
 
 dotenv.config();
 
 const config: NilHardhatUserConfig = {
-  solidity: "0.8.24",
+  solidity: "0.8.19",
   ignition: {
     requiredConfirmations: 1,
   },
@@ -22,5 +23,6 @@ const config: NilHardhatUserConfig = {
   },
   walletAddress: process.env.WALLET_ADDR?.toLowerCase(),
   debug: true,
+  feeCredit: 5_000_000
 };
 export default config;
